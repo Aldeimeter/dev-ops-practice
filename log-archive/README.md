@@ -79,11 +79,13 @@ log-archive /path/to/logs
 The script provides color-coded feedback and creates archives with the following structure:
 
 ### Archive Naming Convention:
+
 ```
 <directory-name>_logs_archived_YYYYMMDD_HHMMSS.tar.gz
 ```
 
 ### Example Output:
+
 ```bash
 $ ./log-archive.sh /var/log/nginx
 
@@ -125,12 +127,14 @@ The script includes comprehensive error checking:
 ### Common Issues:
 
 1. **Permission denied**
+
    ```bash
    # For system directories, you may need sudo
    sudo ./log-archive.sh /var/log
    ```
 
 2. **Directory not found**
+
    ```bash
    # Ensure the path is correct
    ls -la /path/to/logs
@@ -162,12 +166,14 @@ The script uses standard POSIX utilities and should work on most Unix-like syste
 ## Example Workflows
 
 ### Daily Log Archiving:
+
 ```bash
 # Create a cron job for daily archiving
 0 2 * * * /usr/local/bin/log-archive /var/log/myapp
 ```
 
 ### Pre-deployment Cleanup:
+
 ```bash
 # Archive logs before deploying new version
 ./log-archive.sh ./logs
@@ -175,6 +181,7 @@ rm -f ./logs/*.log
 ```
 
 ### Batch Processing Multiple Directories:
+
 ```bash
 #!/bin/bash
 for dir in /var/log/nginx /var/log/apache2 /var/log/mysql; do
@@ -187,6 +194,10 @@ done
 ## Contributing
 
 Feel free to submit issues or pull requests to improve the script's functionality or add new features.
+
+## Project URL
+
+This project is based on a challenge from: https://roadmap.sh/projects/log-archive-tool
 
 ## License
 
