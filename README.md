@@ -32,6 +32,20 @@ A bash script to compress and archive log files from any directory into timestam
 
 **Project URL:** https://roadmap.sh/projects/log-archive-tool
 
+### 📈 [NGINX Log Analyzer](./nginx-log-analyzer/)
+
+A comprehensive bash script to analyze NGINX access logs and extract meaningful insights about web traffic patterns.
+
+**Features:**
+
+- Top N analysis for IP addresses, requested paths, status codes, and user agents
+- Compressed log file support (.gz files)
+- Configurable result count with performance optimization
+- Log format validation and comprehensive error handling
+- Color-coded output with detailed traffic pattern insights
+
+**Project URL:** https://roadmap.sh/projects/nginx-log-analyser
+
 ## Getting Started
 
 Each project directory contains its own README with detailed setup and usage instructions.
@@ -49,14 +63,17 @@ cd server-stats
 
 ```
 DevOps/
-├── README.md           # This file
-├── server-stats/       # Server performance monitoring script
-│   ├── README.md       # Project-specific documentation
-│   └── server-stats.sh # Main bash script
-└── log-archive/        # Log archiving and compression tool
-    ├── README.md       # Project-specific documentation
-    ├── log-archive.sh  # Main bash script
-    └── archived_logs/  # Output directory (auto-created)
+├── README.md                    # This file
+├── server-stats/                # Server performance monitoring script
+│   ├── README.md                # Project-specific documentation
+│   └── server-stats.sh          # Main bash script
+├── log-archive/                 # Log archiving and compression tool
+│   ├── README.md                # Project-specific documentation
+│   ├── log-archive.sh           # Main bash script
+│   └── archived_logs/           # Output directory (auto-created)
+└── nginx-log-analyzer/          # NGINX access log analysis tool
+    ├── README.md                # Project-specific documentation
+    └── nginx-log-analyzer.sh    # Main bash script
 ```
 
 ## Requirements
