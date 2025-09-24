@@ -11,6 +11,7 @@ A simple bash script to compress and archive log files from any directory into t
 - **Organized Storage** - Archives are saved in an `archived_logs/` directory
 - **Color-Coded Output** - Visual feedback with color-coded messages
 - **Input Validation** - Checks directory existence and read permissions
+- **Smart Processing** - Only creates archives when log files are found
 
 ### Archive Management
 
@@ -97,7 +98,9 @@ $ ./log-archive.sh /var/log/nginx
 
 - 🔵 **Blue** - Informational messages and file listings
 - 🟢 **Green** - Success messages and completion notifications
-- 🔷 **Cyan** - Usage instructions and error messages
+- 🟡 **Yellow** - Warning messages (e.g., no log files found)
+- 🔴 **Red** - Error messages and validation failures
+- 🔷 **Cyan** - Usage instructions
 
 ## Archive Structure
 
@@ -134,8 +137,8 @@ The script includes comprehensive error checking:
    ```
 
 3. **No log files found**
-   - The script will still create an archive, but it will be empty
-   - Check if files have .log extension
+   - The script will display a warning and exit without creating an archive
+   - Check if files have .log extension or are in subdirectories
 
 ## Compatibility
 

@@ -45,11 +45,19 @@ create_folder_for_logs() {
 }
 
 archive_logs() {
+  # Check if there are any .log files
+  log_count=$(find $1 -name "*.log" -type f | wc -l)
+
+  if [ $log_count -eq 0 ]; then
+    echo -e "${YELLOW}No log files found in $1${NC}"
+    exit 0
+  fi
+
   echo -e "${BLUE} Compressing following log files"
   find $1 -name "*.log" -type f
   echo -e ${NC};
-  log_file_name="$(basename $1)_logs_archived_$(date '+%Y%m%d_%H%M%S').tar.gz" 
-  find $1 -name "*.log" -type f | tar -czf "archived_logs/${log_file_name}" $1 -T - 
+  log_file_name="$(basename $1)_logs_archived_$(date '+%Y%m%d_%H%M%S').tar.gz"
+  find $1 -name "*.log" -type f | tar -czf "archived_logs/${log_file_name}" $1 -T -
 
   echo -e "${GREEN} log file was created at $PWD/archived_logs/${log_file_name}${NC}"
 }
